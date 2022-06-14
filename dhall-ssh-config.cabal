@@ -1,0 +1,70 @@
+cabal-version: 2.2
+
+-- This file has been generated from package.yaml by hpack version 0.34.4.
+--
+-- see: https://github.com/sol/hpack
+
+name:           dhall-ssh-config
+version:        1.0.1.0
+description:    Please see the README on GitHub at <https://github.com/robertjlooby/dhall-ssh-config#readme>
+homepage:       https://github.com/robertjlooby/dhall-ssh-config#readme
+bug-reports:    https://github.com/robertjlooby/dhall-ssh-config/issues
+author:         Robert Looby
+maintainer:     robertjlooby@gmail.com
+copyright:      2019 Robert Looby
+license:        GPL-3.0-only
+license-file:   LICENSE
+build-type:     Simple
+extra-source-files:
+    README.md
+    ChangeLog.md
+
+source-repository head
+  type: git
+  location: https://github.com/robertjlooby/dhall-ssh-config
+
+library
+  exposed-modules:
+      Dhall.SSHConfig
+  other-modules:
+      Paths_dhall_ssh_config
+  hs-source-dirs:
+      src
+  build-depends:
+      base >=4.7 && <5
+    , containers
+    , dhall
+    , insert-ordered-containers
+    , text
+  default-language: Haskell2010
+
+executable dhall-to-ssh-config
+  main-is: Main.hs
+  other-modules:
+      Paths_dhall_ssh_config
+  hs-source-dirs:
+      dhall-to-ssh-config
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , dhall
+    , dhall-ssh-config
+    , text
+  default-language: Haskell2010
+
+test-suite dhall-ssh-config-test
+  type: exitcode-stdio-1.0
+  main-is: Spec.hs
+  other-modules:
+      Dhall.SSHConfigSpec
+      Paths_dhall_ssh_config
+  hs-source-dirs:
+      test
+  ghc-options: -threaded -rtsopts -with-rtsopts=-N
+  build-depends:
+      base >=4.7 && <5
+    , dhall
+    , dhall-ssh-config
+    , hspec
+    , text
+  default-language: Haskell2010

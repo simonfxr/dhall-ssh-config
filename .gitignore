@@ -1,3 +1,4 @@
+.direnv
 .stack-work/
-dhall-ssh-config.cabal
+result
 *~
