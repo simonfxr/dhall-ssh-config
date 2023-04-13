@@ -1,6 +1,6 @@
 cabal-version: 2.2
 
--- This file has been generated from package.yaml by hpack version 0.34.4.
+-- This file has been generated from package.yaml by hpack version 0.35.2.
 --
 -- see: https://github.com/sol/hpack
 
@@ -28,6 +28,8 @@ library
       Dhall.SSHConfig
   other-modules:
       Paths_dhall_ssh_config
+  autogen-modules:
+      Paths_dhall_ssh_config
   hs-source-dirs:
       src
   build-depends:
@@ -41,6 +43,8 @@ library
 executable dhall-to-ssh-config
   main-is: Main.hs
   other-modules:
+      Paths_dhall_ssh_config
+  autogen-modules:
       Paths_dhall_ssh_config
   hs-source-dirs:
       dhall-to-ssh-config
@@ -57,6 +61,8 @@ test-suite dhall-ssh-config-test
   main-is: Spec.hs
   other-modules:
       Dhall.SSHConfigSpec
+      Paths_dhall_ssh_config
+  autogen-modules:
       Paths_dhall_ssh_config
   hs-source-dirs:
       test

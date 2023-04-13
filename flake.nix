@@ -2,7 +2,7 @@
   description = "dhall-ssh-config nix flake";
 
   inputs = {
-    nixpkgs.url = "nixpkgs/nixos-22.05";
+    nixpkgs.url = "nixpkgs/nixpkgs-unstable";
     flake-utils.url = "github:numtide/flake-utils";
     flake-compat = {
       url = "github:edolstra/flake-compat";
@@ -18,8 +18,6 @@
             root = ./.;
             name = "dhall-ssh-config";
             returnShellEnv = false;
-            # cabal2nixOptions =
-            #   "--flag=svg --flag=cairo --flag=-rasterific --flag=-postscript --flag=-ps";
           } // extraArgs;
           pkg = pkgs.haskellPackages.developPackage args;
           withCabal = pkg:
