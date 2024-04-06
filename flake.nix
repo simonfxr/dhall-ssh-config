@@ -22,7 +22,8 @@
           pkg = pkgs.haskellPackages.developPackage args;
           withCabal = pkg:
             pkg.overrideAttrs (attrs: {
-              buildInputs = attrs.buildInputs ++ [ pkgs.cabal-install ];
+              buildInputs = attrs.buildInputs
+                ++ [ pkgs.cabal-install pkgs.libz.dev ];
             });
         in if args.returnShellEnv then withCabal pkg else pkg;
     in flake-utils.lib.eachDefaultSystem (system:
